@@ -1,8 +1,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="test
-" />
+    <meta name="description" content="漏洞描述：
+Windows操作系统的SMBv1协议中存在安全漏洞。攻击者会扫描开放445文件共享端口的Windows机器，向目标机器发送特制报文触发缓冲区溢出，导致在目标机器上远程执行任意代码。
+实验目的：
+通过Metasploit框架对w..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://R1v0ir.github.io/media/css/bootstrap.min.css">
     
@@ -34,7 +36,7 @@
 <body>
     <div id=side>
         <div class="avatar-border">
-            <img src="https://R1v0ir.github.io/images/avatar.png?v=1588751520188" class="avatar">
+            <img src="https://R1v0ir.github.io/images/avatar.png?v=1588760074159" class="avatar">
         </div>
         <div class="sitename">R1v0ir</div>
         <span class="describtion" data-text='["收藏从未停止 行动从未开始"]'>&nbsp;</span>
@@ -295,10 +297,31 @@
             </div>
             
             <div id="texttitle" style="text-align: center">
-                <h2>test</h2>
+                <h2>验证MS17_010(永恒之蓝)</h2>
             </div>
             <div class="text ">
-                <p>test</p>
+                <p><strong>漏洞描述：</strong><br>
+Windows操作系统的SMBv1协议中存在安全漏洞。攻击者会扫描开放445文件共享端口的Windows机器，向目标机器发送特制报文触发缓冲区溢出，导致在目标机器上远程执行任意代码。</p>
+<p><b>实验目的：</b><br>
+通过Metasploit框架对win7主机进行渗透攻击，利用永恒之蓝MS17-010模块对该win7进行渗透，最终获得控制权。</p>
+<p><b>实验环境：</b><br>
+渗透机：kali linux<br>
+靶机：win7</p>
+<p><b>实验要求：</b><br>
+kali能ping通win7 win7开启445端口 可用命令检查</p>
+<blockquote>
+<p>nmap -p 445 ip</p>
+</blockquote>
+<p><strong>1.数据库初始化（如果是第一次使用则需要) </strong></p>
+<blockquote>
+<p>root@kali:~# msfdb init<br>
+<img src='G:\blos\Gridea_yum\images\MS17_010\init.png' ></p>
+</blockquote>
+<!-- more -->
+</br>
+<b>2.终端进入metasploit</b>
+>root@kali:~# msfconsole
+<img src='G:\blos\Gridea_yum\images\MS17_010\msfconsole.png' >
 
             </div>
             
@@ -451,10 +474,31 @@
             </div>
             
             <div id="texttitle" style="text-align: center">
-                <h2>test</h2>
+                <h2>验证MS17_010(永恒之蓝)</h2>
             </div>
             <div class="text ">
-                <p>test</p>
+                <p><strong>漏洞描述：</strong><br>
+Windows操作系统的SMBv1协议中存在安全漏洞。攻击者会扫描开放445文件共享端口的Windows机器，向目标机器发送特制报文触发缓冲区溢出，导致在目标机器上远程执行任意代码。</p>
+<p><b>实验目的：</b><br>
+通过Metasploit框架对win7主机进行渗透攻击，利用永恒之蓝MS17-010模块对该win7进行渗透，最终获得控制权。</p>
+<p><b>实验环境：</b><br>
+渗透机：kali linux<br>
+靶机：win7</p>
+<p><b>实验要求：</b><br>
+kali能ping通win7 win7开启445端口 可用命令检查</p>
+<blockquote>
+<p>nmap -p 445 ip</p>
+</blockquote>
+<p><strong>1.数据库初始化（如果是第一次使用则需要) </strong></p>
+<blockquote>
+<p>root@kali:~# msfdb init<br>
+<img src='G:\blos\Gridea_yum\images\MS17_010\init.png' ></p>
+</blockquote>
+<!-- more -->
+</br>
+<b>2.终端进入metasploit</b>
+>root@kali:~# msfconsole
+<img src='G:\blos\Gridea_yum\images\MS17_010\msfconsole.png' >
 
             </div>
             
