@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://R1v0ir.github.io</id>
     <title>R1v0ir</title>
-    <updated>2020-05-06T10:14:39.844Z</updated>
+    <updated>2020-05-06T10:21:20.080Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://R1v0ir.github.io"/>
     <link rel="self" href="https://R1v0ir.github.io/atom.xml"/>
@@ -16,24 +16,6 @@
         <link href="https://R1v0ir.github.io/post/test/">
         </link>
         <updated>2020-05-06T07:19:43.000Z</updated>
-        <summary type="html"><![CDATA[<p><strong>漏洞描述：</strong><br>
-Windows操作系统的SMBv1协议中存在安全漏洞。攻击者会扫描开放445文件共享端口的Windows机器，向目标机器发送特制报文触发缓冲区溢出，导致在目标机器上远程执行任意代码。</p>
-<p><b>实验目的：</b><br>
-通过Metasploit框架对win7主机进行渗透攻击，利用永恒之蓝MS17-010模块对该win7进行渗透，最终获得控制权。</p>
-<p><b>实验环境：</b><br>
-渗透机：kali linux<br>
-靶机：win7</p>
-<p><b>实验要求：</b><br>
-kali能ping通win7 win7开启445端口 可用命令检查</p>
-<blockquote>
-<p>nmap -p 445 ip</p>
-</blockquote>
-<p><strong>1.数据库初始化（如果是第一次使用则需要) </strong></p>
-<blockquote>
-<p>root@kali:~# msfdb init<br>
-<img src='G:\blos\Gridea_yum\images\MS17_010\init.png' ></p>
-</blockquote>
-]]></summary>
         <content type="html"><![CDATA[<p><strong>漏洞描述：</strong><br>
 Windows操作系统的SMBv1协议中存在安全漏洞。攻击者会扫描开放445文件共享端口的Windows机器，向目标机器发送特制报文触发缓冲区溢出，导致在目标机器上远程执行任意代码。</p>
 <p><b>实验目的：</b><br>
@@ -51,11 +33,11 @@ kali能ping通win7 win7开启445端口 可用命令检查</p>
 <p>root@kali:~# msfdb init<br>
 <img src='G:\blos\Gridea_yum\images\MS17_010\init.png' ></p>
 </blockquote>
-<!-- more -->
-</br>
-<b>2.终端进入metasploit</b>
->root@kali:~# msfconsole
-<img src='G:\blos\Gridea_yum\images\MS17_010\msfconsole.png' >
+<p><b>2.终端进入metasploit</b></p>
+<blockquote>
+<p>root@kali:~# msfconsole<br>
+<img src='G:\blos\Gridea_yum\images\MS17_010\msfconsole.png' ></p>
+</blockquote>
 ]]></content>
     </entry>
 </feed>
