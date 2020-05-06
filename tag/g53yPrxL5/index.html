@@ -1,26 +1,18 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    a {
+        text-decoration: none;
+    }
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://R1v0ir.github.io/media/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://R1v0ir.github.io/media/css/live2d.css">
+<title>标签-R1v0ir</title>
 
-🏠 关于本站
-👨‍💻 博主是谁
-⛹ 兴趣爱好
-📬 联系我呀
-..." />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://R1v0ir.github.io/media/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css">
-              
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
-    <link rel="stylesheet" href="https://R1v0ir.github.io/media/css/live2d.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://R1v0ir.github.io/media/css/bootstrap.min.css">
-    <title>R1v0ir</title>
-</head>
 
 <body>
     <!-- 响应式布局，针对PC端内容显示 -->
@@ -271,112 +263,109 @@
             alert("博主暂未设置QQ联系方式");
     }
 </script></div>
-                <div id="tab1" class="tab">
-                    <div class="bars">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="close"></div>
-                </div>
                 <div id="main" class="col-xs-12 col-sm-7">
-                    <link rel="stylesheet" href="https://R1v0ir.github.io/media/css/font-awesome.css">
-<style>
+                    <style>
+    .postimage {
+        width: 100%;
+    }
 
-</style>
+    .tag-container {
+        min-height: 100vh;
+        background: white;
+    }
 
-<body>
-    <div class="allcontent">
-        <div class="postshow">
-            
-            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
-                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
-            </div>
-            <div class="postinfo">
-                <div class="postdate"><i class="fa fa-calendar"></i>2019-01-25</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
-                <div class="posttag">
-                    
-                </div>
-            </div>
-            
-            <div id="texttitle" style="text-align: center">
-                <h2>关于</h2>
-            </div>
-            <div class="text ">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
-
-            </div>
-            
-            
-        </div>
-    </div>
-</body>
-<script>
-    var t_img; // 定时器
-    var isLoad = true; // 控制变量
-    isImgLoad(function () {
-        // 加载完成
-        $('.postdetailimg').css("display", "block");
-    });
-    // 判断图片加载的函数
-    function isImgLoad(callback) {
-        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
-        // 查找所有封面图，迭代处理
-        $('.postdetailimg').each(function () {
-            // 找到为0就将isLoad设为false，并退出each
-            if (this.height === 0) {
-                isLoad = false;
-                return false;
-            }
-        });
-        // 为true，没有发现为0的。加载完毕
-        if (isLoad) {
-            clearTimeout(t_img); // 清除定时器
-            // 回调函数
-            callback();
-            // 为false，因为找到了没有加载完成的图，将调用定时器递归
-        } else {
-            isLoad = true;
-            t_img = setTimeout(function () {
-                isImgLoad(callback); // 递归扫描
-            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+    @media screen and (max-width:1300px){
+        .tag-container{
+            margin-top:100px;
         }
     }
+</style>
+<link rel="stylesheet" href="https://R1v0ir.github.io/media/css/font-awesome.css">
+<div class="tag-container">
+    
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            <img src="https://R1v0ir.github.io/post-images/MS17_010.jpg" class="postimage"
+                onclick="window.location.href= 'https://R1v0ir.github.io/post/MS17_010/';return false">
+            <div class="posttitlebox">
+                <div class="posttitle" onclick="window.location.href= 'https://R1v0ir.github.io/post/MS17_010/';return false">
+                    验证MS17_010(永恒之蓝)
+                </div>
+            </div>
+        </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2020-05-06</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 3 min read</div>
+            <div class="posttag">
+                
+                <a href="https://R1v0ir.github.io/tag/g53yPrxL5/" class="postlink">
+                    <i class="fa fa-tag"></i> MS17_010
+                </a>
+                
+            </div>
+        </div>
+        
+</div>
+
+</div>
+                    <div style="background:white">
+                        <div class="pagi">
+    <ul>
+        
+        <li><a style="width:100px">&nbsp;</a></li>
+        
+                <li><a id="page1">1</a></li>
+                <li><a id="page2" class="active">2</a></li>
+                <li><a id="page3">3</a></li>
+                
+        <li><a style="width:100px">&nbsp;</a></li>
+        
+            </ul>
+</div>
+
+<div id="pagination-prev" style="display:none"> 
+</div>
+<div id="pagination-next" style="display:none"> </div>
+
+
+<script>
+    var prevstr = document.getElementById("pagination-prev").innerHTML;
+    var nextstr = document.getElementById("pagination-next").innerHTML;
+    var page1 = document.getElementById("page1");
+    var page2 = document.getElementById("page2");
+    var page3 = document.getElementById("page3");
+    page1.innerHTML = '-';
+    page2.innerHTML = '1';
+    page3.innerHTML = '-';
+    if (prevstr.length > 5) {
+        if (prevstr.indexOf("page/") != -1) {
+            var prevnum = parseInt(prevstr.split("page/")[1]);
+            page1.innerHTML = prevnum;
+            page2.innerHTML = prevnum + 1;
+        } else {
+            page1.innerHTML = 1;
+            page2.innerHTML = 2;
+        }
+    }
+    if (nextstr.indexOf("page/") != -1) {
+        var nextnum = parseInt(nextstr.split("page/")[1]);
+        page3.innerHTML = nextnum;
+        page2.innerHTML = nextnum - 1;
+    }
 </script>
-                    <div name="comment" style="background: white">
-                        <div class="commentcontainer">
-                            
-                            <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
-                            
-                        </div>
+                        <div style="padding-bottom:10%"></div>
                     </div>
                 </div>
-                <div class="toc-container">
-                    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
-</ul>
-</li>
-</ul>
-
-                </div>
+                <div class="col-xs-6 col-sm-2"></div>
             </div>
         </div>
         <div id="bg">
         </div>
         <div id="bgurl" style="display:none">\media\images\custom-bgimage.jpg</div>
     </div>
+
+
     <!-- 响应式布局，针对手机端内容显示 -->
     <div class="nav-small">
         <head>
@@ -451,83 +440,55 @@
   <!-- 引入BootStrap核心js文件 -->
   <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
-        <div style="margin-top:30px"></div>
-        <link rel="stylesheet" href="https://R1v0ir.github.io/media/css/font-awesome.css">
-<style>
+        <div style="margin-top:50px"></div>
+        <style>
+    .postimage {
+        width: 100%;
+    }
 
-</style>
+    .tag-container {
+        min-height: 100vh;
+        background: white;
+    }
 
-<body>
-    <div class="allcontent">
-        <div class="postshow">
-            
-            <div class="postdetailimg" style="width:100%;overflow: hidden;display: none">
-                <img src="\media\images\custom-postdefaultimage.jpg" class="postimage">
-            </div>
-            <div class="postinfo">
-                <div class="postdate"><i class="fa fa-calendar"></i>2019-01-25</div>
-                <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
-                <div class="posttag">
-                    
-                </div>
-            </div>
-            
-            <div id="texttitle" style="text-align: center">
-                <h2>关于</h2>
-            </div>
-            <div class="text ">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
-
-            </div>
-            
-            
-        </div>
-    </div>
-</body>
-<script>
-    var t_img; // 定时器
-    var isLoad = true; // 控制变量
-    isImgLoad(function () {
-        // 加载完成
-        $('.postdetailimg').css("display", "block");
-    });
-    // 判断图片加载的函数
-    function isImgLoad(callback) {
-        // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
-        // 查找所有封面图，迭代处理
-        $('.postdetailimg').each(function () {
-            // 找到为0就将isLoad设为false，并退出each
-            if (this.height === 0) {
-                isLoad = false;
-                return false;
-            }
-        });
-        // 为true，没有发现为0的。加载完毕
-        if (isLoad) {
-            clearTimeout(t_img); // 清除定时器
-            // 回调函数
-            callback();
-            // 为false，因为找到了没有加载完成的图，将调用定时器递归
-        } else {
-            isLoad = true;
-            t_img = setTimeout(function () {
-                isImgLoad(callback); // 递归扫描
-            }, 500); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+    @media screen and (max-width:1300px){
+        .tag-container{
+            margin-top:100px;
         }
     }
-</script>
-        <div name="comment" style="background: white">
-            <div class="commentcontainer">
+</style>
+<link rel="stylesheet" href="https://R1v0ir.github.io/media/css/font-awesome.css">
+<div class="tag-container">
+    
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            <img src="https://R1v0ir.github.io/post-images/MS17_010.jpg" class="postimage"
+                onclick="window.location.href= 'https://R1v0ir.github.io/post/MS17_010/';return false">
+            <div class="posttitlebox">
+                <div class="posttitle" onclick="window.location.href= 'https://R1v0ir.github.io/post/MS17_010/';return false">
+                    验证MS17_010(永恒之蓝)
+                </div>
+            </div>
+        </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2020-05-06</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 3 min read</div>
+            <div class="posttag">
                 
-                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                <a href="https://R1v0ir.github.io/tag/g53yPrxL5/" class="postlink">
+                    <i class="fa fa-tag"></i> MS17_010
+                </a>
                 
             </div>
+        </div>
+        
+</div>
+
+</div>
+        <div class="pagination-container">
+            
+            
         </div>
     </div>
     <div id="landlord">
@@ -535,10 +496,10 @@
         <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
     </div>
 </body>
-<script>
-    hljs.initHighlightingOnLoad()
-</script>
-<script src="https://R1v0ir.github.io/media/js/post.js"></script>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script src="https://R1v0ir.github.io/media/js/index.js"></script>
 
 <script type="text/javascript">
     var message_Path = '/live2d/'
