@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://R1v0ir.github.io</id>
     <title>R1v0ir</title>
-    <updated>2020-05-06T03:17:12.322Z</updated>
+    <updated>2020-05-06T03:34:25.062Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://R1v0ir.github.io"/>
     <link rel="self" href="https://R1v0ir.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>收藏从未停止,行动从未开始</subtitle>
     <logo>https://R1v0ir.github.io/images/avatar.png</logo>
     <icon>https://R1v0ir.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, R1v0ir</rights>
