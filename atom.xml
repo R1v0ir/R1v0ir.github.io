@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://R1v0ir.github.io</id>
     <title>R1v0ir_blog</title>
-    <updated>2020-05-07T15:28:44.108Z</updated>
+    <updated>2020-05-12T08:11:11.566Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://R1v0ir.github.io"/>
     <link rel="self" href="https://R1v0ir.github.io/atom.xml"/>
@@ -10,6 +10,262 @@
     <logo>https://R1v0ir.github.io/images/avatar.png</logo>
     <icon>https://R1v0ir.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, R1v0ir_blog</rights>
+    <entry>
+        <title type="html"><![CDATA[BurpSuite一些模块简单介绍]]></title>
+        <id>https://R1v0ir.github.io/post/burpsuite/</id>
+        <link href="https://R1v0ir.github.io/post/burpsuite/">
+        </link>
+        <updated>2020-05-12T06:51:23.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>本章主要主要介绍burpsuite一些模块以及使用<br>
+</br></p>
+</blockquote>
+<h1 id="0x01-burpsuite介绍">0x01 burpsuite介绍</h1>
+<p>Burp Suite 是用于攻击web 应用程序的集成平台。它包含了许多工具，并为这些工具设计了许多接口，以促进加快攻击应用程序的过程。所有的工具都共享一个能处理并显示HTTP 消息，持久性，认证，代理，日志，警报的一个强大的可扩展的框架。本文主要介绍它的以下特点</p>
+<blockquote>
+<p>1.Target(目标)——显示目标目录结构的的一个功能<br>
+2.Proxy——是一个拦截HTTP/S的代理服务器，作为一个在浏览器和目标应用程序之间的中间人，允许你拦截，查看，修改在两个方向上的原始数据流。<br>
+3.Intruder——是一个定制的高度可配置的工具，对web应用程序进行自动化攻击，如：枚举标识符，收集有用的数据，以及使用fuzzing技术探测常规漏洞。<br>
+4.Repeater——是一个靠手动操作来补发单独的HTTP请求，并分析应用程序响应的工具。<br>
+5.Decoder——是一个进行手动执行或对应用程序数据者智能解码编码的工具。<br>
+6.Comparer——是一个实用的工具，通常是通过一些相关的请求和响应得到两项数据的一个可视化的“差异”</p>
+</blockquote>
+</br>
+<h1 id="0x02-工具安装">0x02 工具安装</h1>
+<h2 id="1下载jdk">1.下载JDK</h2>
+<h3 id="11-官方下载链接httpswwworaclecomcnjavatechnologiesjavase-jdk8-downloadshtml">1.1 官方下载链接：https://www.oracle.com/cn/java/technologies/javase-jdk8-downloads.html</h3>
+<blockquote>
+<figure data-type="image" tabindex="1"><img src="https://R1v0ir.github.io/post-images/1589267061837.png" alt="" loading="lazy"></figure>
+</blockquote>
+<h3 id="12-下载适合自己操作系统的系统-这里为windows例子-下图是windows可选版本">1.2 下载适合自己操作系统的系统 这里为Windows例子 下图是Windows可选版本</h3>
+<blockquote>
+<figure data-type="image" tabindex="2"><img src="https://R1v0ir.github.io/post-images/1589267099489.png" alt="" loading="lazy"></figure>
+</blockquote>
+<h3 id="13-安装jdk">1.3 安装jdk</h3>
+<h4 id="131直接点安装-会静默安装-红色箭头所指可以改安装位置">1.3.1直接点安装 会静默安装 (红色箭头所指可以改安装位置）</h4>
+<blockquote>
+<p><img src="https://R1v0ir.github.io/post-images/1589267139674.png" alt="" loading="lazy"><br>
+<img src="https://R1v0ir.github.io/post-images/1589267164112.png" alt="" loading="lazy"></p>
+</blockquote>
+<h3 id="14-查看是否安装成功生效">1.4 查看是否安装成功生效</h3>
+<h4 id="141-打开cmd窗口">1.4.1 打开cmd窗口</h4>
+<blockquote>
+<p>按组合键Ctrl+R 然后输入cmd回车<br>
+<img src="https://R1v0ir.github.io/post-images/1589267376617.png" alt="" loading="lazy"></p>
+</blockquote>
+<h4 id="142-查看jdk是否安装成功-如果有显示版本则安装成功">1.4.2 查看jdk是否安装成功 如果有显示版本则安装成功</h4>
+<blockquote>
+<p><img src="https://R1v0ir.github.io/post-images/1589267419474.png" alt="" loading="lazy"><br>
+</br></p>
+</blockquote>
+<h2 id="2下载burpsuite">2.下载burpsuite</h2>
+<h3 id="21官方下载链接httpsportswiggernetburp">2.1官方下载链接：https://portswigger.net/burp</h3>
+<figure data-type="image" tabindex="3"><img src="https://R1v0ir.github.io/post-images/1589267551261.png" alt="" loading="lazy"></figure>
+<h3 id="22按自己需求下载-由于本人经济有限-所以下载community免费">2.2.按自己需求下载 由于本人经济有限 所以下载Community（免费）</h3>
+<blockquote>
+<p>burp suite分为三个版本 Enterprise(企业版)、Professional(专业版)、Community(社区版）<br>
+<img src="https://R1v0ir.github.io/post-images/1589267612413.png" alt="" loading="lazy"></p>
+</blockquote>
+<h3 id="23-安装burpsuite">2.3 安装burpsuite</h3>
+<blockquote>
+<p>步骤：<br>
+①下载完毕后,直接运行，弹出安装界面<br>
+②选择安装路径<br>
+③无脑按Next<br>
+④安装完毕</p>
+</blockquote>
+<h2 id="3打开burp-suite">3.打开burp suite</h2>
+<blockquote>
+<p><img src="https://R1v0ir.github.io/post-images/1589267756359.png" alt="" loading="lazy"><br>
+<img src="https://R1v0ir.github.io/post-images/1589267760265.png" alt="" loading="lazy"><br>
+<img src="https://R1v0ir.github.io/post-images/1589267768352.png" alt="" loading="lazy"><br>
+</br></p>
+</blockquote>
+<h1 id="0x03-模块介绍">0x03 模块介绍</h1>
+<h2 id="1target模块">1.Target模块</h2>
+<blockquote>
+<p>Target模块显示目标目录结构的的一个功能。</p>
+</blockquote>
+<h3 id="12-site-map网站地图">1.2 Site map(网站地图)</h3>
+<figure data-type="image" tabindex="4"><img src="https://R1v0ir.github.io/post-images/1589268052928.png" alt="" loading="lazy"></figure>
+<h3 id="13-scope-范围">1.3 Scope (范围)</h3>
+<blockquote>
+<p>在当前工作的范围内定义目标 此设置会影响整个工具的操作<br>
+<img src="https://R1v0ir.github.io/post-images/1589268116746.png" alt="" loading="lazy"></p>
+</blockquote>
+<h3 id="14-lssue-definittions-问题定义">1.4 lssue definittions (问题定义)</h3>
+<blockquote>
+<p>burp 可以检测到的所有问题的定义列表<br>
+左边主要是burp所定义的列表 右边是问题的描述<br>
+<img src="https://R1v0ir.github.io/post-images/1589268165466.png" alt="" loading="lazy"><br>
+</br></p>
+</blockquote>
+<h2 id="2proxy模块">2.Proxy模块</h2>
+<blockquote>
+<p>Proxy模块是一个拦截HTTP/S的代理服务器，作为一个在浏览器和目标应用程序之间的中间人，允许你拦截，查看，修改在两个方向上的原始数据流</p>
+</blockquote>
+<h3 id="21-lntercept-截断">2.1 lntercept (截断)</h3>
+<blockquote>
+<p>用于显示修改HTTP请求及响应内容，并可以将拦截的HTTP请求快速发送至其他模块处理<br>
+<img src="https://R1v0ir.github.io/post-images/1589268261914.png" alt="" loading="lazy"></p>
+</blockquote>
+<blockquote>
+<p>同时 也可以鼠标右键 把信息发给其他模块<br>
+<img src="https://R1v0ir.github.io/post-images/1589268296122.png" alt="" loading="lazy"></p>
+</blockquote>
+<h3 id="22-http-history-历史记录">2.2 HTTP history (历史记录)</h3>
+<blockquote>
+<p>这里将记录经过代理服务器访问的所有请求，即使当Intercept is off时也会记录<br>
+<img src="https://R1v0ir.github.io/post-images/1589268336078.png" alt="" loading="lazy"></p>
+</blockquote>
+<h3 id="23-websockets-history-webscokets历史">2.3 WebSockets history (webscokets历史)</h3>
+<blockquote>
+<p>这个选项主要用于记录WebSockets的数据包，是HTML5中最强大的通信功能，定义了一个全双工的通信信道，只需Web上的一个 Socket即可进行通信，能减少不必要的网络流量并降低网络延迟<br>
+<img src="https://R1v0ir.github.io/post-images/1589268380875.png" alt="" loading="lazy"></p>
+</blockquote>
+<h3 id="24-options-选项">2.4 Options (选项)</h3>
+<blockquote>
+<p>主要用于设置代理监听、请求和响应，拦截反应，匹配和替换、TLS等<br>
+<img src="https://R1v0ir.github.io/post-images/1589268479115.png" alt="" loading="lazy"><br>
+<img src="https://R1v0ir.github.io/post-images/1589268485585.png" alt="" loading="lazy"><br>
+</br></p>
+</blockquote>
+<h2 id="3intruder模块">3.Intruder模块</h2>
+<blockquote>
+<p>Intruder模块是渗透模块根据上面检测到的可能存在漏洞的链接，调用载荷用于自动对Web应用程序自定义的攻击<br>
+</br></p>
+</blockquote>
+<h3 id="31-target">3.1 Target</h3>
+<blockquote>
+<p>代理服务的目标/域名/端口 一般情况下 默认就可以<br>
+<img src="https://R1v0ir.github.io/post-images/1589268885194.png" alt="" loading="lazy"></p>
+</blockquote>
+<h3 id="32-positions">3.2 Positions</h3>
+<p>设置有效负载位置 也就是要测试的位置<br>
+<img src="https://R1v0ir.github.io/post-images/1589268978054.png" alt="" loading="lazy"></p>
+<h3 id="321-四种攻击类型-关于payload可先看33的内容">3.2.1  四种攻击类型 (关于payload可先看3.3的内容)</h3>
+<blockquote>
+<p>1.Sniper(狙击手模式)<br>
+一次只攻击一个标记 假设你现在有两个标记 分别为user和pass　而你的payload的值是１和２<br>
+那么　他的攻击就会先攻击第一个标记　也就是user　然后pass不攻击　先把所有的payload值都对user攻击　然后攻击pass的时候　和user一样　但是user不攻击</p>
+</blockquote>
+<blockquote>
+<p>２.Battering ram（攻城锤模式）<br>
+攻城锤和狙击手类似　都是用一个payload集合　假设你现在有两个标记 分别为user和pass　而你的payload的值是１和２　他的攻击就是把每个payload的值同时都在user和pass攻击一遍</p>
+</blockquote>
+<blockquote>
+<p>３.Pitchfork(草叉模式）<br>
+草叉模式允许使用多payload组合 假设你现在有两个标记 分别为user和pass　而你的payload_1的值是１和２　而你的payload_2的值是3和4 他的攻击就是payload_1的值在user标记攻击 payload_2的值在pass标记攻击</p>
+</blockquote>
+<blockquote>
+<p>4.Cluster bomb(集束炸弹模式)<br>
+假设你现在有两个标记 分别为user和pass　而你的payload_1的值是１和２　而你的payload_2的值是3和4 他的攻击就是payload_1的值在user标记攻击 payload_2的值在pass标记攻击 然后user标记一直先使用payload_1第一个值 等payload_2的值在pass攻击完以后 user标记才用payload_1第二个值 然后继续在pass标记用payload_2的值 一直循环到payload_1值全部跑完以后 也就是说payload_1的每个值都会用完一次payload_2的值</p>
+</blockquote>
+<blockquote>
+<p><img src="https://R1v0ir.github.io/post-images/1589269085463.png" alt="" loading="lazy"><br>
+</br></p>
+</blockquote>
+<h3 id="33-payloads">3.3 payloads</h3>
+<blockquote>
+<p>设置payloads攻击选项 也就是字典<br>
+<img src="https://R1v0ir.github.io/post-images/1589269136014.png" alt="" loading="lazy"><br>
+</br></p>
+</blockquote>
+<h3 id="34-options">3.4 Options</h3>
+<blockquote>
+<p>可以设置Intruder模块使用很多细节<br>
+<img src="https://R1v0ir.github.io/post-images/1589269189257.png" alt="" loading="lazy"><br>
+<img src="https://R1v0ir.github.io/post-images/1589269226868.png" alt="" loading="lazy"><br>
+</br></p>
+</blockquote>
+<h3 id="4-repeater模块">4. Repeater模块</h3>
+<blockquote>
+<p>Repeater模块：重放模块用于实现请求重放，通过修改参数进行手工请求回应的调试，也就是模拟发包的模块</p>
+</blockquote>
+<h2 id="41-操作过程">4.1 操作过程</h2>
+<blockquote>
+<p>主要分为两部分<br>
+Request和Response<br>
+Request:模拟发包 比如说文件上传 不知道能不能上传成功的同时还要保持对目标的拦截动态不变<br>
+Response：响应数据包 Request发出去 Response就会显示得到的数据包 看是否文件是否上传成功<br>
+<img src="https://R1v0ir.github.io/post-images/1589269358307.png" alt="" loading="lazy"><br>
+</br></p>
+</blockquote>
+<h2 id="5-decoder-模块">5. Decoder 模块</h2>
+<blockquote>
+<p>Decoder模块：解码器模块用于实现对URL、HTML、Base64、ASCII、二/八/十六进制、哈希等编码转换，支持多次编码解码操作</p>
+</blockquote>
+<blockquote>
+<p>举个例子 我用字符串 hello 用base64加密了 得到了 aGVsbG8= 放在Decoder模块解密 把 aGVsbG8= 放到第一个框然后点右边的Decode 然后选择base64 就可以得到hello<br>
+试着把hello加密方式为base64 选择右边Encode编码 可以发现 第一个框和第三个框的值是一样的<br>
+<img src="https://R1v0ir.github.io/post-images/1589269434148.png" alt="" loading="lazy"><br>
+</br></p>
+</blockquote>
+<h2 id="6comparer模块">6.Comparer模块</h2>
+<blockquote>
+<p>Comparer模块：对比模块用于对两次不同的请求和回应进行可视化对比，以此区分不同参数对结果造成的影响<br>
+使用这个模块要进行两次两次请求<br>
+如图中所示 加入两次请求后 点右下角words进行对比 可以发现 他把不同的字符串标记了出来<br>
+<img src="https://R1v0ir.github.io/post-images/1589269575336.png" alt="" loading="lazy"><br>
+</br></p>
+</blockquote>
+<h1 id="0x04-实验操作">0x04 实验操作</h1>
+<h2 id="1搭建环境">1.搭建环境</h2>
+<blockquote>
+<p>这里用的环境是 owasp mutillidae<br>
+OWASP Mutillidae是一个免费，开源的Web应用程序，提供专门被允许的安全测试和入侵的Web应用程序。它是由Adrian “Irongeek” Crenshaw和Jeremy “webpwnized” Druin.开发的一款自由和开放源码的Web应用程序。其中包含了丰富的渗透测试项目，如SQL注入、跨站脚本、clickjacking、本地文件包含、远程代码执行等</p>
+</blockquote>
+<p>下载地址：https://github.com/webpwnized/mutillidae<br>
+环境的搭建可以参考链接:https://www.fujieace.com/penetration-test/mutillidae.html<br>
+</br></p>
+<h2 id="2利用burp爆破账号密码">2.利用burp爆破账号密码</h2>
+<h3 id="21游览器设置代理-这里以360游览器作为例子-其他游览器设置方法差不多">2.1游览器设置代理 这里以360游览器作为例子 其他游览器设置方法差不多</h3>
+<blockquote>
+<p><img src="https://R1v0ir.github.io/post-images/1589269720569.png" alt="" loading="lazy"><br>
+<img src="https://R1v0ir.github.io/post-images/1589269729116.png" alt="" loading="lazy"></p>
+</blockquote>
+<h3 id="22-burp代理-需要注意的是监听ip和端口-都要一致">2.2 burp代理 需要注意的是监听IP和端口 都要一致</h3>
+<blockquote>
+<figure data-type="image" tabindex="5"><img src="https://R1v0ir.github.io/post-images/1589269764833.png" alt="" loading="lazy"></figure>
+</blockquote>
+<h3 id="23-打开靶机-找到账号密码的场地">2.3 打开靶机 找到账号密码的场地</h3>
+<blockquote>
+<figure data-type="image" tabindex="6"><img src="https://R1v0ir.github.io/post-images/1589269806295.png" alt="" loading="lazy"></figure>
+</blockquote>
+<p>这就是我们要实验的地方</p>
+<blockquote>
+<figure data-type="image" tabindex="7"><img src="https://R1v0ir.github.io/post-images/1589269855324.png" alt="" loading="lazy"></figure>
+</blockquote>
+<h3 id="24-随便输个用户名和密码-然后点login-让burp拦截的到">2.4 随便输个用户名和密码 然后点login 让burp拦截的到</h3>
+<blockquote>
+<p>点login前 burp要开启监听按钮<br>
+<img src="https://R1v0ir.github.io/post-images/1589269895609.png" alt="" loading="lazy"></p>
+</blockquote>
+<h3 id="25-此时-我们已经拦截到了数据包-现在把他发送到intruder模块进行爆破">2.5 此时 我们已经拦截到了数据包 现在把他发送到Intruder模块进行爆破</h3>
+<blockquote>
+<p>右键选择发送到Intruder模块<br>
+<img src="https://R1v0ir.github.io/post-images/1589269942804.png" alt="" loading="lazy"></p>
+</blockquote>
+<h3 id="26-把账号密码进行标记右边add-把不需要的进行clear-因为我们是两个标记-所以选择攻击类型为battering-ram因为sniper不合适-他只同时对一个-不能对多个">2.6 把账号密码进行标记(右边Add) 把不需要的进行Clear 因为我们是两个标记 所以选择攻击类型为Battering ram(因为Sniper不合适 他只同时对一个 不能对多个）</h3>
+<figure data-type="image" tabindex="8"><img src="https://R1v0ir.github.io/post-images/1589269981689.png" alt="" loading="lazy"></figure>
+<h3 id="27-设置payload-设置字典包-然后开启攻击">2.7 设置payload 设置字典包 然后开启攻击</h3>
+<blockquote>
+<figure data-type="image" tabindex="9"><img src="https://R1v0ir.github.io/post-images/1589270016186.png" alt="" loading="lazy"></figure>
+</blockquote>
+<h3 id="28-暴力攻击结果">2.8 暴力攻击结果</h3>
+<blockquote>
+<p>可以发现 payload值为admin这一项 状态码(302)和其他项的状态码是不一样的(200) 长度也不一样 肯定有问题 302是重定向 跳到另一个url去了  看一下下面爆破出来的账号密码<br>
+username=admin&amp;password=admin<br>
+<img src="https://R1v0ir.github.io/post-images/1589270066001.png" alt="" loading="lazy"></p>
+</blockquote>
+<h3 id="29-测试账号密码-分别输入admin">2.9 测试账号密码 分别输入admin</h3>
+<blockquote>
+<figure data-type="image" tabindex="10"><img src="https://R1v0ir.github.io/post-images/1589270098053.png" alt="" loading="lazy"></figure>
+</blockquote>
+<p>点完login后 可以发现 进去了 说明爆破出来的账号密码是对的<br>
+<img src="https://R1v0ir.github.io/post-images/1589270146928.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[利用Metasploit对Ftp和Telnet服务进行暴力破解]]></title>
         <id>https://R1v0ir.github.io/post/msf_ftp_telnet/</id>
